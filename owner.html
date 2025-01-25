@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner Form</title>
+  <style>
+     /* General Styles */
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Body Styling */
+    body {
+      background: url('image.png') no-repeat center center fixed; /* Use the uploaded image as background */
+      background-size: cover; /* Full-screen background */
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Main Container */
+    .main-container {
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.1); /* Glassmorphic effect */
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      padding: 3rem 4rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+    }
+
+    /* Title Styling */
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Description Styling */
+    .description {
+      font-size: 1.4rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 2.5rem;
+    }
+
+    /* Form Styling */
+    .owner-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .form-input, .form-textarea, .form-select {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 1rem;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      outline: none;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .form-input::placeholder, .form-textarea::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: rgba(255, 193, 7, 1); /* Highlighted border */
+      box-shadow: 0 6px 15px rgba(255, 193, 7, 0.5);
+    }
+
+    .form-textarea {
+      resize: none;
+      border-radius: 20px;
+    }
+
+    .form-select {
+      font-size: 1rem;
+      color: #000; /* Change text color to black */
+    }
+
+    .form-select option {
+      color: #000; /* Ensure the options in the dropdown are black */
+    }
+
+    /* Submit Button Styling */
+    .submit-btn {
+      background: linear-gradient(135deg, #f7b733, #fc4a1a); /* Gradient button */
+      color: #fff;
+      border: none;
+      padding: 1.2rem 2.5rem;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255, 193, 7, 0.6);
+    }
+
+    /* Footer Styling */
+    footer {
+      margin-top: 3rem;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    }
+
+    .question-label {
+      font-size: 1.1rem;
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1 class="title">Owner Form</h1>
+    <p class="description">Please fill out the details below. All fields are required.</p>
+    <form class="owner-form" id="owner-form">
+      <!-- Owner Name -->
+      <label class="question-label" for="owner-name">Full Name</label>
+      <input type="text" id="owner-name" class="form-input" placeholder="Enter your full name" required>
+
+      <!-- Owner Email -->
+      <label class="question-label" for="owner-email">Email Address</label>
+      <input type="email" id="owner-email" class="form-input" placeholder="Enter your email address" required>
+
+      <!-- Owner Contact Number -->
+      <label class="question-label" for="owner-contact">Contact Number</label>
+      <input type="text" id="owner-contact" class="form-input" placeholder="Enter your contact number" required>
+
+      <!-- Owner Address -->
+      <label class="question-label" for="owner-address">Address</label>
+      <textarea id="owner-address" class="form-textarea" rows="4" placeholder="Enter your address" required></textarea>
+
+      <!-- Property Type -->
+      <label class="question-label" for="property-type">Property Type</label>
+      <select id="property-type" class="form-select" required>
+        <option value="" disabled selected>Select property type</option>
+        <option value="apartment">Apartment</option>
+        <option value="house">House</option>
+        <option value="commercial">Commercial Building</option>
+        <option value="land">Land</option>
+      </select>
+
+      <!-- Ownership Status -->
+      <label class="question-label" for="ownership-status">Ownership Status</label>
+      <select id="ownership-status" class="form-select" required>
+        <option value="" disabled selected>Select ownership status</option>
+        <option value="owned">Owned</option>
+        <option value="rented">Rented</option>
+        <option value="mortgaged">Mortgaged</option>
+      </select>
+
+      <!-- Additional Information -->
+      <label class="question-label" for="additional-info">Additional Information</label>
+      <textarea id="additional-info" class="form-textarea" rows="4" placeholder="Any other details you would like to provide" required></textarea>
+
+      <!-- Submit Button -->
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <footer>&copy; 2025 Your Company. All Rights Reserved.</footer>
+  </div>
+
+  <script>
+    // Form Validation
+    document.getElementById('owner-form').addEventListener('submit', function(event) {
+      let valid = true;
+
+      // Check Full Name
+      const name = document.getElementById('owner-name').value;
+      if (name.trim() === '') {
+        alert('Full Name is required.');
+        valid = false;
+      }
+
+      // Check Email
+      const email = document.getElementById('owner-email').value;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        valid = false;
+      }
+
+      // Check Contact Number
+      const contact = document.getElementById('owner-contact').value;
+      const phoneRegex = /^[0-9]{10}$/; // Adjust phone number validation as needed
+      if (!phoneRegex.test(contact)) {
+        alert('Please enter a valid 10-digit contact number.');
+        valid = false;
+      }
+
+      // Check Address
+      const address = document.getElementById('owner-address').value;
+      if (address.trim() === '') {
+        alert('Address is required.');
+        valid = false;
+      }
+
+      // Check Property Type
+      const propertyType = document.getElementById('property-type').value;
+      if (propertyType === '') {
+        alert('Please select a property type.');
+        valid = false;
+      }
+
+      // Check Ownership Status
+      const ownershipStatus = document.getElementById('ownership-status').value;
+      if (ownershipStatus === '') {
+        alert('Please select an ownership status.');
+        valid = false;
+      }
+
+      // Check Additional Information
+      const additionalInfo = document.getElementById('additional-info').value;
+      if (additionalInfo.trim() === '') {
+        alert('Additional information is required.');
+        valid = false;
+      }
+
+      // Prevent form submission if validation fails
+      if (!valid) {
+        event.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>

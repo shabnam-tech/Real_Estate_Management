@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Manager Form</title>
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Body Styling */
+    body {
+      background: url('image.png') no-repeat center center fixed; /* Background image */
+      background-size: cover; /* Make the image cover the entire background */
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Center form vertically */
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    /* Main Container */
+    main {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    /* Section Box with Frosted Glass Effect */
+    .form-container {
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.1); /* Slight frosted glass effect */
+      border-radius: 20px;
+      backdrop-filter: blur(12px); /* Blur effect for frosted look */
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); /* Shadow for depth */
+      padding: 3rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+      overflow-y: auto; /* Enable scrolling within the form container */
+      max-height: 90vh; /* Prevent the form from exceeding the viewport height */
+    }
+
+    /* Title Styling */
+    .form-container h2 {
+      font-size: 2.8rem;
+      color: #fff;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Form Group Styling */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #e0e0e0; /* Softer label color */
+      font-size: 16px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 6px;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.15); /* Light transparent input fields */
+      color: #fff;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group select {
+      color: #333; /* Dark color for text inside select dropdown */
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #dcdcdc; /* Light grey placeholder text */
+    }
+
+    /* Focus Effects */
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(255, 193, 7, 1); /* Golden focus border */
+      outline: none;
+    }
+
+    /* Radio Buttons Styling */
+    .radio-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px; /* Space between the radio buttons */
+      margin-top: 10px;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .radio-group input[type="radio"] {
+      margin-right: 8px;
+    }
+
+    /* Button Styling */
+    .form-group button {
+      background-color: rgba(72, 34, 13, 0.9); /* Deep gold-like button color */
+      color: white;
+      border: none;
+      padding: 1.2rem 2.5rem;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      width: 250px; /* Consistent button width */
+      margin: 0 auto; /* Centered button */
+    }
+
+    .form-group button:hover {
+      background-color: rgba(96, 45, 17, 1); /* Brighter gold on hover */
+      transform: scale(1.05);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Footer Styling */
+    footer {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.8); /* Dark footer for contrast */
+      color: rgba(255, 193, 7, 1); /* Golden footer text */
+      padding: 1rem;
+      font-size: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      font-weight: bold;
+      width: 100%; /* Full width footer */
+      position: fixed; /* Fixed at the bottom */
+      bottom: 0;
+      left: 0;
+    }
+
+    footer p {
+      letter-spacing: 0.8px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+<main>
+  <div class="form-container">
+    <h2>Property Manager Form</h2>
+    <form action="process_property.php" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="propertyTitle">Property Title:</label>
+        <input type="text" id="propertyTitle" name="propertyTitle" placeholder="E.g., Luxury Apartment" required>
+      </div>
+
+      <div class="form-group">
+        <label for="propertyType">Property Type:</label>
+        <select id="propertyType" name="propertyType" required>
+          <option value="" disabled selected>Select Property Type</option>
+          <option value="Residential">Residential</option>
+          <option value="Commercial">Commercial</option>
+          <option value="Land">Land</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3" placeholder="Enter full address" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price (₹):</label>
+        <input type="number" id="price" name="price" placeholder="E.g., 5000000" required>
+      </div>
+
+      <div class="form-group">
+        <label>Furnishing Status:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="furnishingStatus" value="Fully Furnished" required> Fully Furnished</label>
+          <label><input type="radio" name="furnishingStatus" value="Semi Furnished" required> Semi Furnished</label>
+          <label><input type="radio" name="furnishingStatus" value="Unfurnished" required> Unfurnished</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="propertyImages">Upload Images:</label>
+        <input type="file" id="propertyImages" name="propertyImages[]" accept="image/*" multiple>
+      </div>
+
+      <div class="form-group">
+        <button type="submit">Submit Property</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <p>🌟 Real Estate Management System | Your Role, Your Path! 🌟</p>
+</footer>
+<script>
+  document.querySelector('form').addEventListener('submit', function(event) {
+    // Prevent form submission by default
+    event.preventDefault();
+
+    // Validate Property Title (non-empty)
+    const propertyTitle = document.getElementById('propertyTitle').value;
+    if (!propertyTitle) {
+      alert('Property Title is required.');
+      return; // Stop form submission
+    }
+
+    // Validate Property Type (non-empty)
+    const propertyType = document.getElementById('propertyType').value;
+    if (!propertyType) {
+      alert('Please select a Property Type.');
+      return;
+    }
+
+    // Validate Address (non-empty)
+    const address = document.getElementById('address').value;
+    if (!address) {
+      alert('Address is required.');
+      return;
+    }
+
+    // Validate Price (non-empty and greater than zero)
+    const price = document.getElementById('price').value;
+    if (!price || price <= 0) {
+      alert('Price is required and must be a positive number.');
+      return;
+    }
+
+    // Validate Furnishing Status (must select one option)
+    const furnishingStatus = document.querySelector('input[name="furnishingStatus"]:checked');
+    if (!furnishingStatus) {
+      alert('Please select the Furnishing Status.');
+      return;
+    }
+
+    // Validate Images (at least one image should be uploaded)
+    const propertyImages = document.getElementById('propertyImages').files;
+    if (propertyImages.length === 0) {
+      alert('Please upload at least one image.');
+      return;
+    }
+
+    // If all validations pass, submit the form
+    this.submit();
+  });
+</script>
+
+</body>
+</html>

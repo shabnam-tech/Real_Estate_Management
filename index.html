@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Role Selection</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section class="main-container">
+      <h1 class="title">Welcome to the Real Estate Management System</h1>
+      <p class="description">Choose your role to proceed:</p>
+      <div class="role-buttons">
+        <button id="ownerBtn" class="role-btn">Owner</button>
+        <button id="tenantBtn" class="role-btn">Tenant</button>
+        <button id="propertyBtn" class="role-btn">Property Manager</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>🌟 Real Estate Management System | Your Role, Your Path! 🌟</p>
+  </footer>
+
+  <!-- JavaScript for Navigation -->
+  <script>
+    // Select buttons
+    const ownerBtn = document.getElementById('ownerBtn');
+    const tenantBtn = document.getElementById('tenantBtn');
+    const adminBtn = document.getElementById('propertyBtn');
+
+    // Add event listeners for navigation
+    ownerBtn.addEventListener('click', () => {
+      window.location.href = 'owner.html';
+    });
+
+    tenantBtn.addEventListener('click', () => {
+      window.location.href = 'tenant.html';
+    });
+
+    adminBtn.addEventListener('click', () => {
+      window.location.href = 'manager.html';
+    });
+  </script>
+</body>
+</html>
+

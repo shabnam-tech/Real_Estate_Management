@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tenant Application Form</title>
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Body Styling */
+    body {
+      background: url('image.png') no-repeat center center fixed; /* Use the provided background image */
+      background-size: cover; /* Cover the entire background */
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Main Container */
+    .main-container {
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.1); /* Frosted glass effect */
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+      padding: 3rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Title Styling */
+    .title {
+      font-size: 2.5rem;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Form Styling */
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 15px;
+      color: #fff;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    input[type="submit"] {
+      background-color: rgba(255, 193, 7, 0.8);
+      color: #333;
+      padding: 12px;
+      border: none;
+      border-radius: 50px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+      font-weight: bold;
+      transition: all 0.4s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: rgba(255, 193, 7, 1);
+      transform: scale(1.05);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+    }
+.checkbox-container {
+  display: flex;
+  align-items: center;  /* Aligns items vertically in the center */
+  gap: 20px;  /* Space between checkboxes */
+  justify-content: center; /* Centers the checkboxes horizontally */
+  flex-wrap: nowrap; /* Ensures items stay in one line */
+  margin-top: 15px;
+}
+
+.checkbox-container input {
+  margin: 0;
+  /* Make sure checkbox size is appropriate */
+  width: auto;
+}
+
+
+    /* Footer Styling */
+    footer {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.8);
+      color: rgba(255, 193, 7, 1);
+      padding: 1rem;
+      font-size: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      font-weight: bold;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+
+    footer p {
+      letter-spacing: 0.8px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1 class="title">Tenant Application Form</h1>
+    <form>
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="address">Current Address:</label>
+      <textarea id="address" name="address" placeholder="Enter your current address" required></textarea>
+
+      <label for="employment">Employment Status:</label>
+      <select id="employment" name="employment" required>
+        <option value="">-- Select Employment Status --</option>
+        <option value="employed">Employed</option>
+        <option value="self-employed">Self-Employed</option>
+        <option value="unemployed">Unemployed</option>
+      </select>
+
+      <label for="income">Monthly Income:</label>
+      <input type="number" id="income" name="income" placeholder="Enter your monthly income" required>
+
+      <label for="reason">Reason for Renting:</label>
+      <textarea id="reason" name="reason" placeholder="Why are you renting this property?" required></textarea>
+
+      <div class="checkbox-container">
+        <input type="checkbox" id="agreement" name="agreement" required>
+        <label for="agreement">I agree to the terms and conditions.</label>
+      </div>
+
+      <input type="submit" value="Submit Application">
+    </form>
+  </div>
+  <footer>
+    <p>Real Estate Management System &copy; 2025</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,109 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+  background: url('image.png') no-repeat center center fixed; /* Use the uploaded image as background */
+  background-size: cover; /* Make the image cover the entire background */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure footer is at the bottom */
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Main Container */
+main {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Section Box with Frosted Glass Effect */
+.main-container {
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.1); /* Slightly softer glass effect */
+  border-radius: 20px; /* Smoother edges */
+  backdrop-filter: blur(12px); /* Enhanced frosted glass look */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); /* Deeper shadow for depth */
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+ 
+}
+
+/* Title Styling */
+.title {
+  font-size: 2.8rem;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for emphasis */
+}
+
+/* Description Styling */
+.description {
+  font-size: 1.5rem;
+  color: #dcdcdc;
+  margin-bottom: 3rem;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons Layout */
+.role-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Button Styling */
+.role-btn {
+  background-color: rgba(72, 34, 13, 0.9); /* Gold-like color matching the sunset vibes */
+  color: white;
+  border: none;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  width: 250px; /* Consistent button width */
+  margin: 0 auto; /* Centered buttons */
+}
+
+.role-btn:hover {
+   background-color: rgba(96, 45, 17, 1);
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8); /* Dark footer for contrast */
+  color: rgba(255, 193, 7, 1); /* Golden text matching the buttons */
+  padding: 1rem;
+  font-size: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+  width: 100%; /* Stretch footer across the width */
+  position: fixed; /* Stick the footer at the bottom */
+  bottom: 0; /* Align to the bottom of the page */
+  left: 0;
+}
+
+footer p {
+  letter-spacing: 0.8px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
